@@ -7,4 +7,6 @@
 
 
 //void matchthread();
+int calpatternnum(Tree temproot);
+void handler();
 void *matchthread(void* arg);

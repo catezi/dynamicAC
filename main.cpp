@@ -48,6 +48,7 @@ void addpatternsfromfile(Tree temproot, int num, string filename) {
     getpatterns(addpatterns, filename);
     for (int i = 0; addpatterns[i][0] != '\0'; i ++) {
         string ss = addpatterns[i];
+        //cout << ss << endl;
         addpattern(temproot, ss, number ++);
     }
     buildingFailPath(temproot);
@@ -87,18 +88,33 @@ int main()
         if (s1 == "-a") {
             if (rootnum == 0) {
                 addpatternsfromfile(root1, 1, s2);
-                while (threadrootnum != 1) {
+                while (true) {
+                    cout << threadrootnum << "HERE1!" << endl;
                     cout << "please wait to the other root to update!" << endl;
                     sleep(1);
+                    pthread_mutex_lock(&mutex);
+                    if (threadrootnum == 1) {
+                        break;
+                    }
+                    pthread_mutex_unlock(&mutex);
                 }
+                pthread_mutex_unlock(&mutex);
                 addpatternsfromfile(root, 1, s2);
             }
             else {
                 addpatternsfromfile(root, 0, s2);
-                while (threadrootnum != 0) {
+                while (true) {
+                    cout << threadrootnum << "HERE2!" << endl;
                     cout << "please wait to the other root to update!" << endl;
                     sleep(1);
+                    pthread_mutex_lock(&mutex);
+                    if (threadrootnum == 0) {
+                        break;
+                    }
+                    pthread_mutex_unlock(&mutex);
                 }
+                pthread_mutex_unlock(&mutex);
+                cout << "HERE3!" << endl;
                 addpatternsfromfile(root1, 0, s2);
             }
         }

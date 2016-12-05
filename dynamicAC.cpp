@@ -139,7 +139,7 @@ void followfailure(Tree tmp, int i, Tree root) {
 
 
 
-int searchAC(Tree root, char* str, int len, int successnum[]) {
+int searchAC(Tree root, char* str, int len, map<string, int> *successmap) {
     TreeNode *tmp=root;
     int i=0;
     while(i < len) {
@@ -155,12 +155,15 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
             followfailure(tmp, i, root);
             tmp = temp;
             if(tmp->patterTag == 1) {
-                //cout << "*****************************" << endl;
-                //cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
-                successnum[tmp->patterNo] ++;
-                //cout << tmp->patternname << endl;
-                //cout << " 1: " << tmp->patterNo << endl;
-                //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
+                string s = tmp->patternname;
+                map<string, int>::iterator iter;
+                iter = (*successmap).find(s);
+                if(iter != (*successmap).end()) {
+                    (*successmap)[s] ++;
+                }
+                else{
+                    (*successmap)[s] = 1;
+                }
             }
             i += 2;
         }
@@ -171,11 +174,15 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
             else {
                 tmp = tmp->fail;
                 if(tmp -> patterTag==1) {
-                    //cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
-                    successnum[tmp->patterNo] ++;
-                    //cout << tmp->patternname << endl;
-                    //cout << " 2: " << tmp->patterNo << endl;
-                    //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
+                    string s = tmp->patternname;
+                    map<string, int>::iterator iter;
+                    iter = (*successmap).find(s);
+                    if(iter != (*successmap).end()) {
+                        (*successmap)[s] ++;
+                    }
+                    else{
+                        (*successmap)[s] = 1;
+                    }
                 }
             }
         }
@@ -183,11 +190,15 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
     while(tmp!=root) {
         tmp = tmp->fail;
         if(tmp->patterTag==1) {
-            //cout<<i-strlen(pattern[tmp->patterNo])+1<<'\t'<<tmp->patterNo<<'\t'<<pattern[tmp->patterNo]<<endl;
-            successnum[tmp->patterNo] ++;
-            //cout << tmp->patternname << endl;
-            //cout << " 3: " <<tmp->patterNo << endl;
-            //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
+            string s = tmp->patternname;
+            map<string, int>::iterator iter;
+            iter = (*successmap).find(s);
+            if(iter != (*successmap).end()) {
+                (*successmap)[s] ++;
+            }
+            else{
+                (*successmap)[s] = 1;
+            }
         }
     }
     return 0;
@@ -222,7 +233,7 @@ void startmatch(char *buff, int len, int successnum[]) {
     //buildingFailPath(root);
     cout<< "pattern : " << pattern[0] << " "<<pattern[1]<<" "<<pattern[2]<<" "<<pattern[3]<<" "<<endl <<endl;
     cout<< "result :" << endl << "position\t" << "NO.\t" << "pattern" <<endl;
-    searchAC(root, buff, len, successnum);
+    //searchAC(root, buff, len, successnum);
     destory(root);
 
     for (int i = 0; i <= patternnum-1; i ++) {

@@ -29,6 +29,7 @@ string getmessage(string filename) {
     while (!in.eof()) {
         string buff;
         getline(in, buff);
+        //buff += "00";
         result += buff;
     }
     return result;

@@ -32,7 +32,7 @@ void deletepattern(Tree root, string pattern) {
             char ch3 = pattern[i];
             char ch4 = pattern[i + 1];
             int num2 = hexchar2int(ch3, ch4);
-            if (ch3 == '\0') {
+            if (i >= pattern.size()) {
                 deletenode.push_back(tempnode);
                 deletelength ++;
                 break;
@@ -60,6 +60,7 @@ void deletepattern(Tree root, string pattern) {
 void addpattern(Tree root, string pattern, int no) {
     Tree tempnode = root;
     Tree tempnode1 = NULL;
+    //cout << "HERE1!" << endl;
     for (int i = 0; i < pattern.size(); i += 2) {
         char ch1 = pattern[i];
         char ch2 = pattern[i + 1];
@@ -75,7 +76,9 @@ void addpattern(Tree root, string pattern, int no) {
             tempnode = tempnode->next[num];
         }
     }
+    //cout << "HERE2!" << endl;
     tempnode->patterTag=1;
     tempnode->patterNo=no;
+    //cout << "HERE3!" << endl;
     strcpy(tempnode->patternname, pattern.c_str());
 }

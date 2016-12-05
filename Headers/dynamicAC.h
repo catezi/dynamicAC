@@ -6,6 +6,7 @@
 #endif // DYNAMICAC_H_INCLUDED
 #include <queue>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ Tree buildingTree();
 int buildingFailPath(Tree root);
 bool ifleafnode(Tree tmp);
 void followfailure(Tree tmp, int i, Tree root);
-int searchAC(Tree root, char* str, int len, int successnum[]);
+int searchAC(Tree root, char* str, int len, map<string, int> *successmap);
 int destory(Tree tree);
 void startmatch(char *buff, int len, int successnum[]);
 bool judge(int successnum[]);

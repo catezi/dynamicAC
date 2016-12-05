@@ -25,6 +25,7 @@
 #include <sstream>
 #include <vector>
 #include <pthread.h>
+#include <map>
 using namespace std;
 
 
@@ -37,9 +38,9 @@ using namespace std;
 #define ASIZE 256
 #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
 #define ITEMMAX 1000
-#define patternnum 2001
+#define patternnum 10000
 
-#define patternlength 20
+#define patternlength 50
 
 struct target {
     char *host;
