@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1480928225 source:d:\code block\code\dynamicac\main.cpp
+1480930962 source:/home/zhutc/code/dynamicAC/dynamicAC.cpp
 	"Headers/dynamicAC.h"
 	"Headers/define.h"
 	"Headers/transform.h"
@@ -7,11 +7,11 @@
 	"Headers/dynamictool.h"
 	"Headers/matchthread.h"
 
-1480325173 d:\code block\code\dynamicac\headers\dynamicac.h
+1480930378 /home/zhutc/code/dynamicAC/Headers/dynamicAC.h
 	<queue>
 	<string>
 
-1480928432 d:\code block\code\dynamicac\headers\define.h
+1480929438 /home/zhutc/code/dynamicAC/Headers/define.h
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -31,41 +31,19 @@
 	<cstdio>
 	<sstream>
 	<vector>
-	<windows.h>
 	<pthread.h>
 
-1480303651 d:\code block\code\dynamicac\headers\transform.h
+1480929438 /home/zhutc/code/dynamicAC/Headers/transform.h
 	<string>
 
-1480310654 source:d:\code block\code\dynamicac\transform.cpp
-	"Headers/dynamicAC.h"
-	"Headers/define.h"
-	"Headers/transform.h"
-	"Headers/readfile.h"
-	"Headers/dynamictool.h"
-
-1480912949 source:d:\code block\code\dynamicac\dynamicac.cpp
-	"Headers/dynamicAC.h"
-	"Headers/define.h"
-	"Headers/transform.h"
-	"Headers/readfile.h"
-	"Headers/dynamictool.h"
-	"Headers/matchthread.h"
-
-1480911102 source:d:\code block\code\dynamicac\dynamictool.cpp
-	"Headers/dynamicAC.h"
-	"Headers/define.h"
-	"Headers/transform.h"
-	"Headers/readfile.h"
-	"Headers/dynamictool.h"
-	"Headers/matchthread.h"
-
-1480928294 d:\code block\code\dynamicac\headers\readfile.h
+1480929438 /home/zhutc/code/dynamicAC/Headers/readfile.h
 	<string>
 
-1480309987 d:\code block\code\dynamicac\headers\dynamictool.h
+1480929438 /home/zhutc/code/dynamicAC/Headers/dynamictool.h
 
-1480928272 source:d:\code block\code\dynamicac\readfile.cpp
+1480939086 /home/zhutc/code/dynamicAC/Headers/matchthread.h
+
+1480929438 source:/home/zhutc/code/dynamicAC/dynamictool.cpp
 	"Headers/dynamicAC.h"
 	"Headers/define.h"
 	"Headers/transform.h"
@@ -73,13 +51,34 @@
 	"Headers/dynamictool.h"
 	"Headers/matchthread.h"
 
-1480917108 d:\code block\code\dynamicac\headers\matchthread.h
-
-1480928346 source:d:\code block\code\dynamicac\matchthread.cpp
+1480939301 source:/home/zhutc/code/dynamicAC/main.cpp
 	"Headers/dynamicAC.h"
 	"Headers/define.h"
 	"Headers/transform.h"
 	"Headers/readfile.h"
 	"Headers/dynamictool.h"
 	"Headers/matchthread.h"
+
+1480939774 source:/home/zhutc/code/dynamicAC/matchthread.cpp
+	"Headers/dynamicAC.h"
+	"Headers/define.h"
+	"Headers/transform.h"
+	"Headers/readfile.h"
+	"Headers/dynamictool.h"
+	"Headers/matchthread.h"
+
+1480929438 source:/home/zhutc/code/dynamicAC/readfile.cpp
+	"Headers/dynamicAC.h"
+	"Headers/define.h"
+	"Headers/transform.h"
+	"Headers/readfile.h"
+	"Headers/dynamictool.h"
+	"Headers/matchthread.h"
+
+1480929438 source:/home/zhutc/code/dynamicAC/transform.cpp
+	"Headers/dynamicAC.h"
+	"Headers/define.h"
+	"Headers/transform.h"
+	"Headers/readfile.h"
+	"Headers/dynamictool.h"
 

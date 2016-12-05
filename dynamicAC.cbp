@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\dynamicAC" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/dynamicAC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\dynamicAC" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/dynamicAC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -32,12 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Headers\define.h" />
-		<Unit filename="Headers\dynamicAC.h" />
-		<Unit filename="Headers\dynamictool.h" />
-		<Unit filename="Headers\matchthread.h" />
-		<Unit filename="Headers\readfile.h" />
-		<Unit filename="Headers\transform.h" />
+		<Unit filename="Headers/define.h" />
+		<Unit filename="Headers/dynamicAC.h" />
+		<Unit filename="Headers/dynamictool.h" />
+		<Unit filename="Headers/matchthread.h" />
+		<Unit filename="Headers/readfile.h" />
+		<Unit filename="Headers/transform.h" />
 		<Unit filename="dynamicAC.cpp" />
 		<Unit filename="dynamictool.cpp" />
 		<Unit filename="main.cpp" />
@@ -45,7 +45,9 @@
 		<Unit filename="readfile.cpp" />
 		<Unit filename="transform.cpp" />
 		<Extensions>
+			<envvars />
 			<code_completion />
+			<lib_finder disable_auto="1" />
 			<debugger />
 		</Extensions>
 	</Project>

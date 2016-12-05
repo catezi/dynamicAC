@@ -156,9 +156,9 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
             tmp = temp;
             if(tmp->patterTag == 1) {
                 //cout << "*****************************" << endl;
-                cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
+                //cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
                 successnum[tmp->patterNo] ++;
-                cout << tmp->patternname << endl;
+                //cout << tmp->patternname << endl;
                 //cout << " 1: " << tmp->patterNo << endl;
                 //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
             }
@@ -171,9 +171,9 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
             else {
                 tmp = tmp->fail;
                 if(tmp -> patterTag==1) {
-                    cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
+                    //cout<< i-strlen(pattern[tmp->patterNo])+1 << '\t' << tmp->patterNo << '\t' << pattern[tmp->patterNo] << endl;
                     successnum[tmp->patterNo] ++;
-                    cout << tmp->patternname << endl;
+                    //cout << tmp->patternname << endl;
                     //cout << " 2: " << tmp->patterNo << endl;
                     //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
                 }
@@ -183,9 +183,9 @@ int searchAC(Tree root, char* str, int len, int successnum[]) {
     while(tmp!=root) {
         tmp = tmp->fail;
         if(tmp->patterTag==1) {
-            cout<<i-strlen(pattern[tmp->patterNo])+1<<'\t'<<tmp->patterNo<<'\t'<<pattern[tmp->patterNo]<<endl;
+            //cout<<i-strlen(pattern[tmp->patterNo])+1<<'\t'<<tmp->patterNo<<'\t'<<pattern[tmp->patterNo]<<endl;
             successnum[tmp->patterNo] ++;
-            cout << tmp->patternname << endl;
+            //cout << tmp->patternname << endl;
             //cout << " 3: " <<tmp->patterNo << endl;
             //cout << pattern[tmp->patterNo] << " : " << successnum[tmp->patterNo] << endl;
         }

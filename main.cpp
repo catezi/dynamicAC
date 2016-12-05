@@ -37,10 +37,13 @@ void initpattern() {
     pattnum = patternnumber;
     root=buildingTree();
     buildingFailPath(root);
+    root1=buildingTree();
+    buildingFailPath(root1);
+    cout << "initial pattern success, have built the root and root1." << endl;
 }
 
 void addpatternsfromfile(Tree temproot, int num, string filename) {
-    cout << "add to root" << num << endl;
+    cout << "add to root" << num << "!" << endl;
     char addpatterns[patternnum][patternlength] = {{'\0'}};
     getpatterns(addpatterns, filename);
     for (int i = 0; addpatterns[i][0] != '\0'; i ++) {
@@ -52,7 +55,7 @@ void addpatternsfromfile(Tree temproot, int num, string filename) {
 }
 
 void deletepatternsfromfile(Tree temproot, int num, string filename) {
-    cout << "delete from root!" << num << endl;
+    cout << "delete from root" << num << "!" << endl;
     char deletepatterns[patternnum][patternlength] = {{'\0'}};
     getpatterns(deletepatterns, filename);
     for (int i = 0; deletepatterns[i][0] != '\0'; i ++) {
@@ -65,8 +68,10 @@ void deletepatternsfromfile(Tree temproot, int num, string filename) {
 
 int main()
 {
+    initpattern();
     pthread_mutex_init (&mutex,NULL);
     int res = pthread_create(&id, NULL, matchthread, NULL);
+    //matchthread();
     if (res) {
         cout << "create thread failed!" << endl;
     }
@@ -74,7 +79,9 @@ int main()
     while (true) {
         char order1[10] = {'\0'};
         char order2[100] = {'\0'};
+        cout << "HERE!" << endl;
         scanf("%s %s", order1, order2);
+        cout << "HERE2!" << endl;
         string s1 = order1;
         string s2 = order2;
         if (s1 == "-a") {
@@ -113,13 +120,13 @@ int main()
                 deletepatternsfromfile(root1, 0, s2);
             }
         }
+        else {
+            cout << "please input correct order such as -a filename to add patterns or -d filename to delete patterns." << endl;
+        }
         if (finish) {
             break;
         }
     }
-    long t1 = GetTickCount();
-    long t2 = GetTickCount();
-    cout << t2-t1 << endl;
 
     return 0;
 }
